@@ -1,3 +1,6 @@
+//Fundamentals (typecasting, even/odd, prime, sums)
+
+
 // a to z using typecasting
 /*
 #include <iostream>

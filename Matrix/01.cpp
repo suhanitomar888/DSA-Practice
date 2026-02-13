@@ -4,7 +4,7 @@
 // https://www.geeksforgeeks.org/problems/boundary-traversal-of-matrix-1587115620/1
 
 // boundary traversal of matrix
-class Solution {
+/*class Solution {
     public:
         vector<int> boundaryTraversal(vector<vector<int>> &matrix, int n, int m) {
             vector<int> result;
@@ -48,3 +48,4 @@ class Solution {
             return result;
         }
     };
+*/

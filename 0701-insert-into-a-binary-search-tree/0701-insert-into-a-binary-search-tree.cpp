@@ -1,8 +1,6 @@
 class Solution {
 public:
     TreeNode* insertIntoBST(TreeNode* root, int val) {
-
-        // empty spot found
         if(root == NULL)
             return new TreeNode(val);
 

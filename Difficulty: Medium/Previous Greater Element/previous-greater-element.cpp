@@ -3,15 +3,15 @@ class Solution {
     vector<int> preGreaterEle(vector<int>& arr) {
         int n=arr.size();
         stack<int> st;
-        vector<int> pse(n);
+        vector<int> pge(n);
         for(int i=0;i<n;i++){
             while(!st.empty() && st.top()<=arr[i]){
                 st.pop();
             }
-            if(st.empty())pse[i]=-1;
-            else pse[i]=st.top();
+            if(st.empty())pge[i]=-1;
+            else pge[i]=st.top();
             st.push(arr[i]);
         }
-        return pse;
+        return pge;
     }
 };

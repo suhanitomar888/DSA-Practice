@@ -20,14 +20,14 @@ public:
             ListNode*prev=NULL;
             ListNode*curr=head;
             ListNode*nextNode=NULL;
-            int  count2=0;
+            int count=0;
 
-            while(count2 < k){
+            while(count < k){
                 nextNode= curr->next;
                 curr->next=prev;
                 prev=curr;
                 curr=nextNode;
-                count2++;
+                count++;
             }
             head->next=reverseKGroup(curr, k);
             return prev;   

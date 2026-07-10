@@ -1,7 +1,17 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-        /*
+         /*
         step 1 -> count k nodes
         check if there are at least k nodes remaining
         if no, then do not reverse just return the current head
@@ -9,29 +19,28 @@ public:
         while(count<k)->
         one pointer that will move till k
         */
-        ListNode*curr=head;
         int count=0;
-        while(curr!=NULL && count < k){
+        ListNode*curr=head;
+        while(curr!=NULL && count<k){
             curr=curr->next;
             count++;
         }
         if(count==k){
-            //reverse first k nodes
-            ListNode*prev=NULL;
             ListNode*curr=head;
-            ListNode*nextNode=NULL;
-            int count=0;
+            ListNode*prev=NULL;
+            ListNode*nn=NULL;
 
-            while(count < k){
-                nextNode= curr->next;
+            count=0;
+            while(count<k){
+                nn=curr->next;
                 curr->next=prev;
                 prev=curr;
-                curr=nextNode;
+                curr=nn;
                 count++;
             }
             head->next=reverseKGroup(curr, k);
-            return prev;   
+            return prev;
         }
-        return head;
+    return head;
     }
 };

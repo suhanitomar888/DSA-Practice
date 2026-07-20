@@ -3,11 +3,9 @@ public:
     bool validate(TreeNode* node, long long min, long long max) {
         if (node == NULL) return true;
 
-        if (node->val <= min || node->val >= max)
-            return false;
+        if (node->val <= min || node->val >= max)return false;
 
-        return validate(node->left, min, node->val) &&
-               validate(node->right, node->val, max);
+        return validate(node->left, min, node->val) && validate(node->right, node->val, max);
     }
 
     bool isValidBST(TreeNode* root) {

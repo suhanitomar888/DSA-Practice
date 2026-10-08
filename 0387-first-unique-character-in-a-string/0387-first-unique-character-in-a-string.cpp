@@ -1,19 +1,15 @@
 class Solution {
 public:
     int firstUniqChar(string s) {
-        unordered_map<char, int>m;
-        queue<int>q;
-
-        for(int i=0;i<s.size();i++){
-            if(m.find(s[i])==m.end()){
-                q.push(i);
-            }
-            m[s[i]]++;
-
-            while(q.size() > 0 && m[s[q.front()]]>1){
-                q.pop();
+        vector<int> freq(26,0);
+        for(int i = 0; i < s.length(); i++){
+            freq[s[i] - 'a']++;
+        }
+        for(int x = 0; x < s.length(); x++){
+            if(freq[s[x] - 'a'] == 1){
+                return x;
             }
         }
-        return q.empty()? -1: q.front();
-    }   
+        return -1;
+    }
 };

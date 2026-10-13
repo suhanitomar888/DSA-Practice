@@ -6,10 +6,8 @@ public:
             mp[nums[i]]++;
         }
         for(auto x:mp){
-            if(x.second>1){
-                return true;
-            }
+            if(x.second>1)return true;
         }
-        return false;
+    return false;
     }
 };

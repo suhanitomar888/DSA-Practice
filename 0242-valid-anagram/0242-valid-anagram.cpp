@@ -7,11 +7,9 @@ public:
             freq[s[i]-'a']++;
             freq[t[i]-'a']--;
         }
-        for(int x: freq){
-            if(x!=0)return false;
+        for(int x:freq){
+            if(x>0)return false;
         }
         return true;
     }
 };
-
- 
